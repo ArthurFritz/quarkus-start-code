@@ -1,0 +1,20 @@
+ports:
+  - port: 8080
+    onOpen: ignore
+  - port: 5005
+    onOpen: ignore
+tasks:
+  - command: code src/main/java/com/example/quarkus/GreetingResource.java && mvn quarkus:dev
+  - command: gp await-port 8080 && gp preview $(gp url 8080)/hello
+github:
+  prebuilds:
+      pullRequestsFromForks: true
+vscode:
+  extensions:
+    - redhat.vscode-quarkus@1.5.0:w7xQsEjV+6/Tn2l7bIqfhg==
+    - vscjava.vscode-java-pack@0.9.1:LFq4B58TFX8QIDQy39PxVQ==
+    - PKief.material-icon-theme@4.1.0:KnvIQCZopEmlWvmvaG/R3g==
+    - VisualStudioExptTeam.vscodeintellicode@1.2.7:ME0wHThZYNfylGMeww9UQA==
+    - redhat.java@0.62.0:GzrZ+DEnEMOiVXu5cHHN6A==
+    - vscjava.vscode-java-test@0.22.3:r0wZhaCeRHUpyUd2S8C/Tw==
+    - vscjava.vscode-java-debug@0.25.1:yUSBAu6nHsJCoKr2noLqvw==
